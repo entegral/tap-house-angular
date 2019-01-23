@@ -1,3 +1,12 @@
-<p>
-  keg-list works!
-</p>
+
+<div class="card text-center">
+  <h3 class="card-header">Happy Hour Menu</h3>
+  <div class="card-body">
+
+    <dl *ngFor='let keg of kegList'>
+      <dt >{{keg.name}}, ${{keg.pintPrice}}</dt>
+      <dd>{{keg.brand}}, {{keg.alcoholContent}}%</dd>
+    </dl>
+
+  </div>
+</div>

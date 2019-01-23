@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Keg } from '../models/keg';
 
 @Component({
   selector: 'app-keg-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KegListComponent implements OnInit {
 
+  @Input('kegList') kegList: Keg[];
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
