@@ -1,0 +1,35 @@
+
+<div class="card text-center">
+  <h3 class="card-header">Employee Portal!</h3>
+  <div class="card-body">
+
+    <dl *ngFor='let keg of kegList'>
+      <dt >{{keg.name}}, ${{keg.pintPrice}}</dt>
+      <dd>{{keg.brand}}, {{keg.alcoholContent}}%</dd>
+
+
+      <div *ngIf = 'editKeg'>
+        <div class="form-group">
+          <input class="form-control" [(ngModel)] = "keg.name" type="text">
+        </div>
+
+        <div class="form-group">
+          <input class="form-control" [(ngModel)] = "keg.brand" type="text">
+        </div>
+
+        <div class="form-group">
+          <input class="form-control" [(ngModel)] = "keg.pintPrice" type="number">
+        </div>
+
+        <div class="form-group">
+          <input class="form-control" [(ngModel)] = "keg.alcoholContent" type="number">
+        </div>
+
+      </div>
+
+  </dl>
+
+  <button class="btn btn-primary" type="button" (click)="editBeer()" >Edit Beer List</button>
+
+  </div>
+</div>
