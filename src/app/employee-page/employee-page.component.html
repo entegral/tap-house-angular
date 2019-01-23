@@ -3,6 +3,8 @@
   <h3 class="card-header">Employee Portal!</h3>
   <div class="card-body">
 
+    <button class="btn btn-primary" type="button" (click)="editBeer()" >Edit Beer List</button>
+
     <dl *ngFor='let keg of kegList'>
       <dt >{{keg.name}}, ${{keg.pintPrice}}</dt>
       <dd>{{keg.brand}}, {{keg.alcoholContent}}%</dd>
@@ -12,24 +14,40 @@
         <div class="form-group">
           <input class="form-control" [(ngModel)] = "keg.name" type="text">
         </div>
-
         <div class="form-group">
           <input class="form-control" [(ngModel)] = "keg.brand" type="text">
         </div>
-
         <div class="form-group">
           <input class="form-control" [(ngModel)] = "keg.pintPrice" type="number">
         </div>
-
         <div class="form-group">
           <input class="form-control" [(ngModel)] = "keg.alcoholContent" type="number">
         </div>
+      </div>
+    </dl>
 
+  <button class="btn btn-primary" type="button" (click)="newBeer()" >Add A Beer</button>
+
+  <div *ngIf= 'displayBeer' class="newKeg">
+
+      <div class="form-group">
+        <input [(ngModel)] = "newBeerName" class="form-control" type="text">
       </div>
 
-  </dl>
+      <div class="form-group">
+        <input [(ngModel)] = "newBeerBrand" class="form-control" type="text">
+      </div>
 
-  <button class="btn btn-primary" type="button" (click)="editBeer()" >Edit Beer List</button>
+      <div class="form-group">
+        <input  [(ngModel)] = "newPintPrice" class="form-control" type="text">
+      </div>
 
+      <div class="form-group">
+        <input [(ngModel)] = "newABV" class="form-control"  type="text">
+      </div>
+
+  <button class="btn btn-primary" type="button" (click)="addKeg()" >Submit</button>
+    </div>
   </div>
+
 </div>
