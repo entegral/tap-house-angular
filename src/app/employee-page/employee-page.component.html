@@ -36,21 +36,24 @@
     </div>
 
     <div *ngIf= 'displayBeer' class="newKeg">
-      <div class="form-group">
-        <input [(ngModel)] = "newBeerName" class="form-control" type="text" placeholder="Name">
-      </div>
-      <div class="form-group">
-        <input [(ngModel)] = "newBeerBrand" class="form-control" type="text" placeholder="Brewery">
-      </div>
-      <div class="form-group">
-        <input  [(ngModel)] = "newPintPrice" class="form-control" type="text" placeholder="$/Pint">
-      </div>
-      <div class="form-group">
-        <input [(ngModel)] = "newABV" class="form-control"  type="text" placeholder="ABV">
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="button" (click)="addKeg()" >Submit</button>
-      </div>
+      <form >
+
+        <div class="form-group">
+          <input [(ngModel)] = "newBeerName" name="newBeerName" class="form-control" type="text" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)] = "newBeerBrand" name="newBeerBrand" class="form-control" type="text" placeholder="Brewery">
+        </div>
+        <div class="form-group">
+          <input  [(ngModel)] = "newPintPrice" name="newPintPrice" class="form-control" type="text" placeholder="$/Pint">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)] = "newABV" name="newABV" class="form-control"  type="text" placeholder="ABV">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="button" (click)="addKeg()" >Submit</button>
+        </div>
+      </form>
 
       </div>
 
