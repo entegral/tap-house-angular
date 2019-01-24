@@ -12,10 +12,10 @@ export class EmployeePageComponent implements OnInit {
   editKeg: Boolean = false;
   displayBeer: Boolean = false;
 
-  newBeerName: string = 'Name';
-  newBeerBrand: string = 'Brewery';
-  newPintPrice: string = 'Price of Pint';
-  newABV: string = 'ABV';
+  newBeerName: string;
+  newBeerBrand: string;
+  newPintPrice: string;
+  newABV: string;
 
 
   constructor() { }
@@ -34,12 +34,20 @@ export class EmployeePageComponent implements OnInit {
 
   addKeg(){
 
-    this.kegList.push(new Keg(
-      this.newBeerName,
-      this.newBeerBrand,
-      parseInt(this.newPintPrice),
-      parseInt(this.newABV)
-    ));
+    if (this.newBeerName && this.newBeerBrand && this.newPintPrice && this.newABV) {
+      this.kegList.push(new Keg(
+        this.newBeerName,
+        this.newBeerBrand,
+        parseInt(this.newPintPrice),
+        parseInt(this.newABV)
+      ));
+
+      this.displayBeer = false;
+      this.newBeerName = null;
+      this.newBeerBrand = null;
+      this.newPintPrice = null;
+      this.newABV = null;
+    }
 
   }
 }
